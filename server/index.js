@@ -46,7 +46,6 @@ app.post("/api/upload", upload.single("file"), (req, res)=> {
     res.status(200).json(file.filename)
 })
 
-//init user router
 userRoutes(app);
 authRoutes(app);
 commentRoutes(app);

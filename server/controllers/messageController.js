@@ -10,9 +10,7 @@ export const getMessages = (req, res) => {
         JOIN conversations AS C ON (m.conversationId = c.id)
         JOIN users as u ON (u.id = m.userId)
         WHERE m.conversationId = ?
-        ORDER BY m.createdAt
-        `
-        
+        ORDER BY m.createdAt`       
 
     db.query(q,[req.query.conversationId],(err, data) => {
         if (err) {
