@@ -1,0 +1,204 @@
+@import "../../style.scss";
+
+.leftBar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 0 10px;
+      margin-top: 4px;
+
+      hr {
+        margin: 10px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border")
+        
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: 12px;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: themed("textColor");
+          padding: 12px;
+          cursor: pointer;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .user:hover {
+          background-color: themed("hvColer");
+          border-radius: 12px;
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 12px;
+          font-size: 18px;
+          cursor: pointer;
+
+          img {
+            width: 30px;
+          }
+
+          .homeIcon {
+            font-size: 26px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .item:hover {
+          background-color: themed("bgSoft");
+          border-radius: 12px;
+        }
+      }
+      
+      .friendList {    
+        flex: 3;
+        position: sticky;
+        top: 60px;
+        height: calc(100vh - 60px);
+        overflow: scroll;
+
+
+        @include mobile {
+          display: none;
+        }
+
+        @include tablet {
+          display: none;
+        }
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .container {
+          padding: 20px;
+
+          .yourFriends {
+            margin-bottom: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+
+            .menuFriend {
+              font-weight: 600;
+              color: themed("textColor");
+              font-size: 16px;
+            }
+
+            hr {
+              margin: 10px 0px;
+              border: none;
+              height: 0.5px;
+            }
+
+            .friend {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin: 4px 0px;
+              padding: 8px;
+              background-color: themed("bgSoft"); 
+              transition: background-color 0.3s; 
+
+              .friendInfo {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                position: relative;
+
+                img {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  object-fit: cover;
+                }
+
+                .online {
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 50%;
+                  background-color: limegreen;
+                  position: absolute;
+                  top: 0;
+                  left: 20px;
+                }
+
+                .friendName {
+                  font-weight: 500;
+                  color: themed("textColor");
+                }
+              }
+            }
+
+            .friend:hover {
+              background-color: themed("hvColor"); 
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.friendContainer {
+  display: flex;
+  align-items: center;
+  justify-content:left;
+  gap: 10px;
+  margin-left: 5px;
+}
+
+.friendImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menuFriend {
+  font-size: 16px;
+  font-weight: 500;
+}

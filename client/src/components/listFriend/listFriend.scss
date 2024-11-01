@@ -1,0 +1,82 @@
+@import "../../style.scss";
+
+.listFriend {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow: scroll;
+    background-color: themed("bg");
+
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      .yourFriends {
+        // -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        // -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        // box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        margin-bottom: 20px;
+        background-color: themed("bg");
+        border-radius: 20px;
+        cursor: pointer;
+
+        .menuFriend {
+          font-weight: 600;
+          color: themed("textColor");
+          font-size: 16px;
+        }
+        hr {
+          margin: 10px 0px;
+          border: none;
+          height: 0.5px;
+          background-color: themed("border");
+        }
+
+        .friend {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 4px 0;
+          padding: 8px;
+        
+          .friendInfo {
+            display: flex;
+            align-items: center;
+            position: relative; // Keep this if you need it for other styles
+        
+            img {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            
+            .friendName {
+              font-weight: 500;
+              color: themed("textColor");
+              margin-left: 8px; // Optional: Adjust this value to control spacing
+            }
+          }
+        }
+        
+
+        .friend:hover {
+          background-color: themed("hvColor");
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
